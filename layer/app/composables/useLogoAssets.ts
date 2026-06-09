@@ -110,7 +110,7 @@ export const useLogoAssets = () => {
     return logo.dark || logo.light || ''
   })
 
-  const faviconUrl = computed(() => appConfig.header?.logo?.favicon || '/favicon.ico')
+  const faviconUrl = computed(() => appConfig.header?.logo?.favicon || '/favicon.png')
 
   const logoAlt = computed(() => appConfig.header?.logo?.alt || appConfig.header?.title || '')
 

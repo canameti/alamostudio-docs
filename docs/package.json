@@ -3,10 +3,10 @@
   "description": "Official documentation for Docus, also used as playground.",
   "type": "module",
   "scripts": {
-    "build": "nuxt prepare ../layer && nuxt build",
-    "dev": "nuxt prepare ../layer && nuxt dev",
+    "build": "nuxt prepare && nuxt build",
+    "dev": "nuxt prepare && nuxt dev",
     "start": "node .output/server/index.mjs",
-    "postinstall": "nuxt prepare ../layer"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/ui": "^4.8.0",
@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@ai-sdk/vue": "^3.0.191",
+    "@iconify-json/lucide": "^1.2.109",
+    "@iconify-json/simple-icons": "^1.2.83",
     "ai": "^6.0.191"
   }
 }
