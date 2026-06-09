@@ -1,22 +1,22 @@
 ---
 seo:
-  title: Write beautiful docs with Markdown
-  description: Ship fast, flexible, and SEO-optimized documentation with beautiful design out of the box. Docus brings together the best of the Nuxt ecosystem. Powered by Nuxt UI.
+  title: Alamo Studio — FiveM Script Documentation
+  description: Official documentation for Alamo Studio FiveM scripts. Step-by-step guides to install, configure, and maintain your scripts so your server runs smoothly.
 ---
 
 ::u-page-hero
 #title
-Write beautiful docs with Markdown.
+Alamo Studio :br Script Documentation
 
 #description
-Ship fast, flexible, and SEO-optimized documentation with beautiful design out of the box. :br Docus brings the best of the Nuxt ecosystem.
+Everything you need to install, configure, and run your Alamo Studio FiveM scripts. :br Clear setup guides, full config references, and troubleshooting in one place.
 
 #links
   :::u-button
   ---
   color: neutral
   size: xl
-  to: en/getting-started/installation
+  to: /en/getting-started/introduction
   trailing-icon: i-lucide-arrow-right
   ---
   Get started
@@ -25,340 +25,117 @@ Ship fast, flexible, and SEO-optimized documentation with beautiful design out o
   :::u-button
   ---
   color: neutral
-  icon: simple-icons-github
+  icon: i-simple-icons-discord
   size: xl
-  to: https://github.com/nuxt-content/docus
+  to: https://discord.gg/alamostudio
   variant: outline
   ---
-  Star on GitHub
+  Join our Discord
   :::
 
-#headline
-  :::u-button
-  ---
-  size: sm
-  to: https://github.com/nuxt-content/docus/releases/tag/v5.0.0
-  variant: outline
-  ---
-  Docus v5 →
-  :::
-::
 
 ::u-page-section
+#title
+Get up and running in three steps
+
+#description
+Each Alamo Studio script follows the same simple flow. Pick where you are and jump straight to the guide.
+
   :::u-page-grid
     ::::u-page-card
     ---
     spotlight: true
-    class: group col-span-2 lg:col-span-1
-    target: _blank
-    to: https://nuxt.com
+    class: col-span-2 lg:col-span-1
+    to: /en/getting-started/installation
     ---
-    :floating-nuxt
-
     #title
-    Built with [Nuxt](https://nuxt.com)
+    [1. Install]{.text-primary}
 
     #description
-    Optimized by the most famous Vue framework. Docus gives you everything you need to build fast, performant, and SEO-friendly websites.
+    Download, drop the resource into your server, set dependencies, and add it to your `server.cfg`. Get the script loading correctly the first time.
     ::::
 
     ::::u-page-card
     ---
     spotlight: true
-    class: col-span-2
-    target: _blank
-    to: https://ui.nuxt.com
+    class: col-span-2 lg:col-span-1
+    to: /en/alamo-market/configuration
     ---
-      :::::u-color-mode-image
-      ---
-      height: 320
-      width: 859
-      alt: Beautiful visual powered by UI
-      class: w-full h-80 object-cover rounded-lg
-      dark: /landing/dark/templates-ui-pro.webp
-      light: /landing/light/templates-ui-pro.webp
-      ---
-      :::::
-
     #title
-    Powered by [Nuxt UI](https://ui.nuxt.com)
+    [2. Configure]{.text-primary}
 
     #description
-    Beautiful out of the box, minimal by design but highly customizable. Docus leverages Nuxt UI to give you the best docs writing experience with zero boilerplate, just focus on your content.
+    Tune the `config.lua` to match your framework, jobs, items, and prices. Every option is documented with examples and safe defaults.
     ::::
 
     ::::u-page-card
     ---
     spotlight: true
-    class: col-span-2
-    target: _blank
+    class: col-span-2 lg:col-span-1
+    to: /en/alamo-market/troubleshooting
     ---
-      :::::tabs
-        ::::::tabs-item{.mt-5 icon="i-lucide-eye" label="Preview"}
-          :::::::div{.flex.flex-col.gap-4}
-            ::::::::note{.my-0}
-            Here's some additional information for you.
-            ::::::::
+    #title
+    [3. Maintain]{.text-primary}
 
-            ::::::::tip{.my-0}
-            Here's a helpful suggestion.
-            ::::::::
-
-            ::::::::warning{.my-0}
-            Be careful with this action as it might have unexpected results.
-            ::::::::
-
-            ::::::::caution{.my-0}
-            This action cannot be undone.
-            ::::::::
-          :::::::
-        ::::::
-
-        ::::::tabs-item
-        ---
-        class: mt-5 mb-2 text-xs overflow-x-auto
-        icon: i-lucide-code
-        label: Code
-        ---
-```mdc
-::note
-Here's some additional information.
+    #description
+    Keep scripts healthy with update guides, common error fixes, and performance tips so your server stays smooth under load.
+    ::::
+  :::
 ::
 
-::tip
-Here's a helpful suggestion.
-::
+::u-page-section
+#title
+Built for QBox, QBCore & ESX
 
-::warning
-Be careful with this action as it might have unexpected results.
-::
+#description
+Our scripts are framework-aware. Follow the guide that matches your server and you're ready in minutes.
 
-::caution
-This action cannot be undone.
-::
+  :::div{.mx-auto.grid.max-w-4xl.grid-cols-1.gap-8.lg:grid-cols-2}
+    ::::u-page-card
+    ---
+    spotlight: true
+    ---
+      :::::div{.bg-elevated.rounded-lg.p-3.text-left.w-full.overflow-x-auto}
+```lua [config.lua]
+Config = {}
+
+Config.Framework = 'qbox' -- 'qbox' | 'qbcore' | 'esx'
+Config.Debug     = false
+
+Config.Locations = {
+    { coords = vec3(-254.1, -971.2, 31.2), label = 'Main Shop' },
+}
 ```
-        ::::::
       :::::
 
     #title
-    Enhanced Markdown syntax by [Nuxt Content](https://content.nuxt.com)
+    Copy-paste [config examples]{.text-primary}
 
     #description
-    The only thing you need to take care about is writing your content. Write your pages in Markdown and extend with MDC syntax to embed Nuxt UI or custom Vue components. Structure, routing, and rendering are handled for you.
-    ::::
-
-    ::::u-page-card
-    ---
-    class: col-span-2 md:col-span-1
-    ---
-    :assistant-demo
-
-    #title
-    Built-in [Assistant]{.text-primary}
-
-    #description
-    Let visitors ask questions about your documentation in natural language. The assistant searches your content and provides accurate answers with source citations.
+    Every configurable option comes with a working snippet. No guesswork.
     ::::
 
     ::::u-page-card
     ---
     spotlight: true
-    class: col-span-2 md:col-span-1 min-h-[450px]
-    target: _blank
+    to: /en/alamo-market/troubleshooting
     ---
-    :color-mode-switch
-
     #title
-    [Nuxt Color](https://color-mode.nuxtjs.org/) mode
+    Fast [troubleshooting]{.text-primary}
 
     #description
-    Built-in dark mode provided, no configuration required.
-    ::::
+    Hitting an error? Our troubleshooting guide covers the most common issues, what causes them, and exactly how to fix them.
 
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2
-    target: _blank
-    ---
-      :::::u-color-mode-image
+      :::::u-button
       ---
-      height: 554
-      width: 859
-      alt: Built-in navigation and full-text search
-      class: rounded-lg
-      dark: /landing/dark/command-menu.png
-      format: webp
-      light: /landing/light/command-menu.png
-      loading: lazy
+      class: px-0
+      color: neutral
+      to: /en/alamo-market/troubleshooting
+      trailing-icon: i-lucide-arrow-right
+      variant: link
       ---
+      View troubleshooting guide
       :::::
-
-    #title
-    Built-in navigation and [full-text search]{.text-primary}
-
-    #description
-    Only focus on ordering your content, Docus handles the search modal and auto-generates the side navigation for you.
-    ::::
-
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2
-    target: _blank
-    ---
-      :::::browser-frame
-      :video{.rounded-md controls loop playsinline src="https://res.cloudinary.com/nuxt/video/upload/v1767647099/studio/studio-demo_eiofld.mp4"}
-      :::::
-
-    #title
-    Edit your content in production with [Nuxt Studio](https://nuxt.studio)
-
-    #description
-    Write and manage your content visually, with zero Markdown knowledge required. Let your non technical colleagues collaborate on the documentation and integrate Vue components without code skills.
-    ::::
-
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2 lg:col-span-1
-    target: _blank
-    to: https://image.nuxt.com/
-    ---
-      :::::div{.flex-1.flex.items-center.justify-center}
-        ::::::u-color-mode-image
-        ---
-        alt: Nuxt Image visual
-        class: w-[30%] lg:w-[70%] my-12 lg:my-0
-        dark: /landing/dark/nuxt-image.svg
-        light: /landing/light/nuxt-image.svg
-        ---
-        ::::::
-      :::::
-
-    #title
-    [Nuxt Image](https://image.nuxt.com) optimization
-
-    #description
-    Docus automatically converts Markdown images to use `<NuxtImg>` .
-    ::::
-
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2 lg:col-span-1
-    target: _blank
-    to: /en/concepts/internationalization
-    ---
-      :::::u-color-mode-image
-      ---
-      height: 195
-      width: 403
-      alt: Internationalization illustration
-      class: w-full my-12 lg:my-0
-      dark: /landing/dark/i18n.svg
-      light: /landing/light/i18n.svg
-      ---
-      :::::
-
-    #title
-    [Internationalization]{.text-primary} support
-
-    #description
-    Built-in i18n support with automatic routing and content management. Create multi-language documentation effortlessly.
-    ::::
-
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2
-    target: _blank
-    to: /en/ai/mcp
-    ---
-      :::::u-color-mode-image
-      ---
-      height: 400
-      width: 859
-      alt: Native MCP server and AI-ready content illustration
-      class: w-full h-auto rounded-lg translate-y-10
-      dark: /landing/dark/mcp.svg
-      light: /landing/light/mcp.svg
-      ---
-      :::::
-
-    #title
-    [AI-Ready]{.text-primary} with native MCP
-
-    #description
-    Built-in Model Context Protocol server connects your documentation to AI tools like Cursor, VS Code, and Claude. Automatic generation of `llms.txt` and `llms-full.txt` files for seamless LLM integration.
-    ::::
-
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2
-    target: _blank
-    ---
-    ```ts [app.config.ts]
-    export default defineAppConfig({
-              ui: {
-                colors: {
-                  primary: 'green',
-                  secondary: 'sky',
-                },
-              },
-              socials: {
-                x: 'https://x.com/nuxt_js',
-                nuxt: 'https://nuxt.com'
-              }
-    })
-    ```
-
-    #title
-    Customize with [Nuxt App Config](https://nuxt.com/docs/4.x/getting-started/configuration#app-configuration)
-
-    #description
-    Update colors, social links, header logos and component styles globally using the `app.config.ts`, no direct code modifications required.
-    ::::
-
-    ::::u-page-card
-    ---
-    spotlight: true
-    class: col-span-2 lg:col-span-1
-    ---
-      :::::div{.flex-1.flex.flex-col.items-center.justify-center.py-8.text-center}
-        ::::::div{.flex.flex-col.gap-3.w-full.max-w-xs}
-          :::::::u-button
-          ---
-          block: true
-          color: primary
-          size: lg
-          to: /en/getting-started/introduction
-          trailing-icon: i-lucide-arrow-right
-          ---
-          Read Documentation
-          :::::::
-
-          :::::::u-button
-          ---
-          block: true
-          color: neutral
-          icon: i-simple-icons-github
-          size: lg
-          target: _blank
-          to: https://github.com/nuxt-content/docus
-          variant: outline
-          ---
-          View on GitHub
-          :::::::
-        ::::::
-      :::::
-
-    #title
-    [Ready]{.text-primary} to start?
-
-    #description
-    Explore all the features that make Docus the perfect documentation solution.
     ::::
   :::
 ::

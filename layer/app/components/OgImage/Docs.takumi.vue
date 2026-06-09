@@ -3,7 +3,7 @@ const { title, description, headline } = defineProps<{ title?: string, descripti
 
 const appConfig = useAppConfig()
 const { name: siteName } = useSiteConfig()
-const primaryColor = appConfig.ui?.colors?.primary ?? 'emerald'
+const primaryColor = appConfig.ui?.colors?.primary ?? 'accent'
 </script>
 
 <template>

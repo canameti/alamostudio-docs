@@ -17,8 +17,8 @@ export default defineNuxtSchema({
               title: 'Primary',
               description: 'Primary color of your UI.',
               icon: 'i-lucide-palette',
-              default: 'green',
-              required: ['red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'],
+              default: 'accent',
+              required: ['accent', 'red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'],
             }),
             neutral: field({
               type: 'string',

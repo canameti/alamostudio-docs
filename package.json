@@ -8,12 +8,19 @@
   },
   "private": true,
   "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "pnpm run docs:dev",
-    "docs:dev": "cd docs && nuxt dev --extends ../layer",
-    "docs:build": "nuxt build docs --extends ../layer",
+    "docs:dev": "nuxt prepare layer && cd docs && nuxt dev --extends ../layer",
+    "docs:build": "nuxt prepare layer && nuxt build docs --extends ../layer",
+    "docs:start": "node docs/.output/server/index.mjs",
+    "start": "pnpm run docs:start",
+    "deploy": "bash scripts/deploy.sh",
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer && nuxt prepare playground --extends ../layer",
-    "playground:dev": "cd playground && nuxt dev --extends ../layer",
+    "playground:dev": "nuxt prepare layer && cd playground && nuxt dev --extends ../layer",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck layer",
     "verify": "pnpm run dev:prepare && pnpm run lint && pnpm run typecheck && pnpm run docs:build",

@@ -1,59 +1,42 @@
 export default defineAppConfig({
   header: {
-    title: 'Docus',
+    title: 'Alamo Studio',
     logo: {
-      light: '/logo/logo-dark.svg',
-      dark: '/logo/logo-light.svg',
-      alt: 'Docus Logo',
-      wordmark: {
-        light: '/logo/wordmark-dark.svg',
-        dark: '/logo/wordmark-light.svg',
-      },
+      light: '/logo/logo-light.png',
+      dark: '/logo/logo-dark.png',
+      alt: 'Alamo Studio Logo',
+      display: 'logo',
+      class: 'h-9 w-auto shrink-0',
       favicon: '/favicon.svg',
     },
   },
   socials: {
-    x: 'https://x.com/nuxt_js',
-    discord: 'https://discord.com/invite/ps2h6QT',
-    nuxt: 'https://nuxt.com',
+    x: 'https://x.com/alamostudio',
+    discord: 'https://discord.gg/alamostudio',
   },
   github: {
-    rootDir: 'docs',
+    url: '',
+    branch: '',
+    owner: '',
+    name: '',
   },
   assistant: {
     faqQuestions: {
       en: [
         { category: 'Getting Started', items: [
-          'How do I install Docus?',
-          'What is the project structure?',
-          'How do I deploy my documentation?',
+          'How do I install an Alamo Studio script?',
+          'Which frameworks are supported?',
+          'Where do I get support?',
         ] },
-        { category: 'Customization', items: [
-          'How do I customize the theme?',
-          'How do I add custom components?',
-          'How do I configure internationalization?',
+        { category: 'Alamo Market', items: [
+          'How do I install Alamo Market?',
+          'What dependencies does Alamo Market need?',
+          'How do I configure Alamo Market?',
         ] },
-        { category: 'AI Features', items: [
-          'How do I enable the assistant?',
-          'What is the MCP server?',
-          'How do I generate llms.txt files?',
-        ] },
-      ],
-      fr: [
-        { category: 'Démarrage', items: [
-          'Comment installer Docus ?',
-          'Quelle est la structure du projet ?',
-          'Comment déployer ma documentation ?',
-        ] },
-        { category: 'Personnalisation', items: [
-          'Comment personnaliser le thème ?',
-          'Comment ajouter des composants personnalisés ?',
-          'Comment configurer l\'internationalisation ?',
-        ] },
-        { category: 'Fonctionnalités IA', items: [
-          'Comment activer l\'assistant ?',
-          'Qu\'est-ce que le serveur MCP ?',
-          'Comment générer les fichiers llms.txt ?',
+        { category: 'Troubleshooting', items: [
+          'The script does not start — what should I check?',
+          'The UI does not open in-game',
+          'How do I update a script?',
         ] },
       ],
     },
@@ -62,27 +45,25 @@ export default defineAppConfig({
     bottom: {
       links: [
         {
-          icon: 'i-lucide-book-open',
-          label: 'Nuxt UI docs',
-          to: 'https://ui.nuxt.com/getting-started/installation/nuxt',
+          icon: 'i-simple-icons-discord',
+          label: 'Discord',
+          to: 'https://discord.gg/alamostudio',
           target: '_blank',
         },
         {
-          icon: 'i-lucide-book-open',
-          label: 'Nuxt Content docs',
-          to: 'https://content.nuxt.com/docs/getting-started/installation/',
-          target: '_blank',
-        },
-        {
-          icon: 'i-lucide-book-open',
-          label: 'Nuxt Studio docs',
-          to: 'https://nuxt.studio/introduction',
+          icon: 'i-lucide-shopping-bag',
+          label: 'Tebex Store',
+          to: 'https://alamostudio.tebex.io',
           target: '_blank',
         },
       ],
     },
   },
   ui: {
+    colors: {
+      primary: 'accent',
+      neutral: 'zinc',
+    },
     pageHero: {
       slots: {
         title: 'font-semibold sm:text-6xl',

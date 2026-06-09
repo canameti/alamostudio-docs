@@ -10,7 +10,7 @@ defineProps<{
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 bg-red-500 rounded-full" />
         <span class="w-3 h-3 bg-yellow-500 rounded-full" />
-        <span class="w-3 h-3 bg-green-500 rounded-full" />
+        <span class="w-3 h-3 bg-primary rounded-full" />
       </div>
       <div class="text-muted">
         {{ title }}

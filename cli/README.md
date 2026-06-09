@@ -42,9 +42,9 @@ npx create-docus my-docs -t i18n
 
 The i18n template includes:
 - Pre-configured `@nuxtjs/i18n` module
-- Locale-based content structure (`content/en/`, `content/fr/`)
+- Locale-based content structure (`content/en/`, add more locales under `content/<locale>/`)
 - Built-in language switcher
-- Automatic URL prefixing (`/en/docs`, `/fr/docs`)
+- Automatic URL prefixing (`/en/docs`, `/<locale>/docs`)
 
 ## 🎯 What it creates
 
@@ -107,7 +107,7 @@ content/
 │   ├── index.md
 │   └── guide/
 │       └── introduction.md
-└── fr/
+└── de/                    # optional: mirror en/ when you add a locale
     ├── index.md
     └── guide/
         └── introduction.md

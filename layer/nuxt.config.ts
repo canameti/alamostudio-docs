@@ -8,6 +8,7 @@ type DocusI18nOptions = { locales?: Array<string | { code: string }> }
 export default defineNuxtConfig({
   modules: [
     resolve('./modules/config'),
+    resolve('./modules/fix-windows-import-paths'),
     resolve('./modules/routing'),
     resolve('./modules/markdown-rewrite'),
     resolve('./modules/skills'),
@@ -50,13 +51,16 @@ export default defineNuxtConfig({
   ],
   devtools: {
     enabled: true,
+    // vite-plugin-vue-tracer parses generated imports as JS; Windows backslashes
+    // in paths (e.g. \node_modules) cause "Bad character escape sequence" errors.
+    componentInspector: process.platform !== 'win32',
   },
   content: {
     experimental: { sqliteConnector: 'native' },
     build: {
       markdown: {
         highlight: {
-          langs: ['bash', 'diff', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml'],
+          langs: ['bash', 'diff', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'lua'],
         },
         remarkPlugins: {
           'remark-mdc': {

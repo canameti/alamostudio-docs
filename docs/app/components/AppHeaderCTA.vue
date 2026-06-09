@@ -1,7 +1,14 @@
+<script setup lang="ts">
+const route = useRoute()
+const { localePath } = useDocusI18n()
+
+const isLanding = computed(() => route.path === '/' || route.path === '/en')
+</script>
+
 <template>
   <UButton
-    v-if="$route.path == '/'"
-    to="/getting-started/installation"
+    v-if="isLanding"
+    :to="localePath('/en/getting-started/introduction')"
     color="neutral"
     size="sm"
     class="hidden lg:inline-flex"

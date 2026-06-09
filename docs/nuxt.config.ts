@@ -1,13 +1,23 @@
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://docs.alamostudio.dev'
+
 export default defineNuxtConfig({
   extends: ['docus'],
-  modules: ['@nuxtjs/i18n', 'nuxt-studio'],
+  modules: ['@nuxtjs/i18n'],
+  devtools: { enabled: false },
   site: {
-    name: 'Docus',
+    name: 'Alamo Studio',
+    url: siteUrl,
+  },
+  nitro: {
+    preset: 'node-server',
   },
   mdc: {
     highlight: {
       shikiEngine: 'javascript',
     },
+  },
+  routeRules: {
+    '/': { redirect: '/en' },
   },
   compatibilityDate: '2025-07-18',
   vite: {
@@ -20,31 +30,19 @@ export default defineNuxtConfig({
     locales: [{
       code: 'en',
       name: 'English',
-    }, {
-      code: 'fr',
-      name: 'Français',
     }],
   },
   llms: {
-    domain: 'https://docus.dev',
-    title: 'Docus',
-    description: 'Write beautiful docs with Markdown.',
+    domain: siteUrl,
+    title: 'Alamo Studio',
+    description: 'Official documentation for Alamo Studio FiveM scripts.',
     full: {
-      title: 'Docus',
-      description: 'Write beautiful docs with Markdown.',
+      title: 'Alamo Studio',
+      description: 'Official documentation for Alamo Studio FiveM scripts.',
     },
   },
   mcp: {
-    name: 'Docus documentation',
-    browserRedirect: '/en/ai/mcp',
-  },
-  studio: {
-    route: '/admin',
-    repository: {
-      provider: 'github',
-      owner: 'nuxt-content',
-      repo: 'docus',
-      rootDir: 'docs',
-    },
+    name: 'Alamo Studio documentation',
+    browserRedirect: '/en/getting-started/introduction',
   },
 })

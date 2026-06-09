@@ -193,13 +193,32 @@ This action cannot be undone.
 
 ---
 
-## Images
+## Images & Media
+
+### Standard Images
+
+```markdown
+![Alt text](/path/to/image.webp)
+![Remote image](https://example.com/image.jpg)
+```
+
+Uses `<NuxtImg>` under the hood for optimization.
 
 ### Color Mode Image
 
 ```markdown
 :u-color-mode-image{alt="Feature" dark="/images/dark.png" light="/images/light.png" class="rounded-lg" width="859" height="400"}
 ```
+
+### Videos
+
+```markdown
+:video{autoplay controls loop src="https://example.com/preview.mp4"}
+```
+
+### Embeds
+
+Use standard Markdown links, `::code-preview` for live examples, and `BrowserFrame` (custom component in `app/components/content/`) for framed browser mockups.
 
 ---
 

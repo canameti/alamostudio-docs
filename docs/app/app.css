@@ -1,3 +1,28 @@
 @theme {
-    --font-sans: "Public Sans", sans-serif;
+  --font-sans: "Public Sans", sans-serif;
+
+  --color-accent-50: #FFFEF0;
+  --color-accent-100: #FFFDE0;
+  --color-accent-200: #FFF9B3;
+  --color-accent-300: #FFF566;
+  --color-accent-400: #FFF133;
+  --color-accent-500: #FFEF1F;
+  --color-accent-600: #D9C900;
+  --color-accent-700: #A39600;
+  --color-accent-800: #6D6300;
+  --color-accent-900: #473F00;
+  --color-accent-950: #262200;
+}
+
+/*
+ * Light mode: the bright yellow (accent-500) has poor contrast on white,
+ * so use a deeper gold for primary text/links/UI to stay readable.
+ * Dark mode keeps the bright yellow which pops against dark backgrounds.
+ */
+:root {
+  --ui-primary: var(--color-accent-700);
+}
+
+.dark {
+  --ui-primary: var(--color-accent-400);
 }

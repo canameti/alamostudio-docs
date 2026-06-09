@@ -1,4 +1,4 @@
-import { addComponent, addImports, addServerHandler, createResolver, defineNuxtModule, logger } from '@nuxt/kit'
+import { addComponent, addImports, addServerHandler, createResolver, defineNuxtModule, installModule, logger } from '@nuxt/kit'
 import { defu } from 'defu'
 
 export interface AssistantModuleOptions {
@@ -33,10 +33,7 @@ export default defineNuxtModule<AssistantModuleOptions>({
   meta: {
     name: 'assistant',
   },
-  moduleDependencies: {
-    '@comark/nuxt': {},
-  },
-  setup(_options, nuxt) {
+  async setup(_options, nuxt) {
     const legacyOptions = nuxt.options.assistant
     if (legacyOptions && Object.keys(legacyOptions).length > 0) {
       log.warn('`assistant` top-level config is deprecated. Move it under `docus.assistant` in nuxt.config.ts')
@@ -83,6 +80,8 @@ export default defineNuxtModule<AssistantModuleOptions>({
       })
       return
     }
+
+    await installModule('@comark/nuxt')
 
     nuxt.options.runtimeConfig.assistant = {
       mcpServer: options.mcpServer,

@@ -3,7 +3,7 @@ const { title, description } = defineProps<{ title?: string, description?: strin
 
 const appConfig = useAppConfig()
 const { name: siteName } = useSiteConfig()
-const primaryColor = appConfig.ui?.colors?.primary ?? 'emerald'
+const primaryColor = appConfig.ui?.colors?.primary ?? 'accent'
 const logoPath = appConfig.header?.logo?.dark || appConfig.header?.logo?.light
 
 const logoSvg = await fetchLogoSvg(logoPath)

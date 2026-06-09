@@ -26,25 +26,27 @@ npm install
 npm run dev
 ```
 
-Your multilingual documentation site will be running at `http://localhost:3000`
+Your documentation site will be running at `http://localhost:3000`
 
 ## 🌍 Languages
 
-This starter comes pre-configured with:
-- 🇺🇸 **English** (`en`) - Default language
-- 🇫🇷 **Français** (`fr`) - French translation
+This starter ships with **English** (`en`) as the default locale. The `@nuxtjs/i18n` module and `content/<locale>/` structure are already set up so you can add more languages later.
+
+To add a locale:
+
+1. Register it in `nuxt.config.ts` under `i18n.locales`
+2. Create a matching folder under `content/` (e.g. `content/de/`)
+
+Docus only registers locales that have a corresponding content directory.
 
 ## 📁 Project Structure
 
 ```
 my-docs/
 ├── content/              # Your markdown content
-│   ├── en/              # English content
-│   │   ├── index.md     # English homepage
-│   │   └── docs/        # English documentation
-│   └── fr/              # French content
-│       ├── index.md     # French homepage
-│       └── docs/        # French documentation
+│   └── en/              # English content (add more locale folders later)
+│       ├── index.md     # Homepage
+│       └── ...          # Documentation pages
 ├── public/              # Static assets
 ├── nuxt.config.ts       # Nuxt configuration with i18n setup
 └── package.json         # Dependencies and scripts
@@ -52,19 +54,11 @@ my-docs/
 
 ### Content Structure
 
-The content is organized by language, making it easy to manage translations:
+Content is organized by locale:
 
 ```
 content/
-├── en/                   # English content
-│   ├── index.md
-│   ├── 1.getting-started/
-│   │   ├── installation.md
-│   │   └── configuration.md
-│   └── 2.essentials/
-│       ├── markdown.md
-│       └── components.md
-└── fr/                   # French content
+└── en/                   # English content
     ├── index.md
     ├── 1.getting-started/
     │   ├── installation.md
@@ -74,13 +68,16 @@ content/
         └── components.md
 ```
 
+When you add another language, mirror the same structure under `content/<locale>/`.
+
 ## 🔗 URL Structure
 
 The i18n starter generates URLs with language prefixes:
 
 - English: `/en/getting-started/installation`
-- French: `/fr/getting-started/installation`
 - Default locale fallback: `/getting-started/installation` (redirects to English)
+
+Additional locales use the same pattern: `/<locale>/...`
 
 ## ⚡ Built with
 
@@ -120,4 +117,4 @@ The built files will be in the `.output` directory, ready for deployment to any 
 
 ## 📄 License
 
-[MIT License](https://opensource.org/licenses/MIT) 
+[MIT License](https://opensource.org/licenses/MIT)

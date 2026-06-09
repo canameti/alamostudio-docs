@@ -51,6 +51,20 @@ html.dark .shiki span {
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
+@theme {
+  --color-accent-50: #FFFEF0;
+  --color-accent-100: #FFFDE0;
+  --color-accent-200: #FFF9B3;
+  --color-accent-300: #FFF566;
+  --color-accent-400: #FFF133;
+  --color-accent-500: #FFEF1F;
+  --color-accent-600: #D9C900;
+  --color-accent-700: #A39600;
+  --color-accent-800: #6D6300;
+  --color-accent-900: #473F00;
+  --color-accent-950: #262200;
+}
+
 :root {
   --ui-container: 90rem;
 }

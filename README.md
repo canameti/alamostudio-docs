@@ -122,7 +122,7 @@ content/
 │   ├── index.md
 │   └── guide/
 │       └── introduction.md
-└── fr/
+└── de/                    # optional: mirror en/ when you add a locale
     ├── index.md
     └── guide/
         └── introduction.md

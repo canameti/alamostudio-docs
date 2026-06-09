@@ -5,7 +5,7 @@ export default defineAppConfig({
   },
   ui: {
     colors: {
-      primary: 'emerald',
+      primary: 'accent',
       neutral: 'zinc',
     },
     commandPalette: {

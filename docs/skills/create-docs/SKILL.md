@@ -369,7 +369,7 @@ export default defineAppConfig({
   // Customize UI components
   ui: {
     colors: {
-      primary: 'emerald',
+      primary: 'accent',
       neutral: 'zinc',
     },
     pageHero: {

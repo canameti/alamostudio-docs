@@ -3,8 +3,10 @@
   "description": "Official documentation for Docus, also used as playground.",
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev"
+    "build": "nuxt prepare ../layer && nuxt build",
+    "dev": "nuxt prepare ../layer && nuxt dev",
+    "start": "node .output/server/index.mjs",
+    "postinstall": "nuxt prepare ../layer"
   },
   "dependencies": {
     "@nuxt/ui": "^4.8.0",
@@ -13,7 +15,6 @@
     "@vercel/speed-insights": "^2.0.0",
     "docus": "workspace:*",
     "nuxt": "4.4.6",
-    "nuxt-studio": "^1.7.0",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
