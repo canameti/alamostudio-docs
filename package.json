@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "pnpm run docs:dev",
     "docs:dev": "nuxt prepare layer && cd docs && nuxt dev --extends ../layer",
-    "docs:build": "nuxt prepare layer && nuxt build docs --extends ../layer",
+    "docs:build": "pnpm --filter docus-docs run build",
     "docs:start": "node docs/.output/server/index.mjs",
     "start": "pnpm run docs:start",
     "deploy": "bash scripts/deploy.sh",

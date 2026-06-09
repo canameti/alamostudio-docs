@@ -8,6 +8,7 @@ echo "==> Installing dependencies"
 pnpm install --frozen-lockfile
 
 echo "==> Building production app"
+rm -rf docs/.nuxt docs/node_modules/.cache/nuxt
 pnpm run docs:build
 
 echo "==> Starting / reloading PM2"
